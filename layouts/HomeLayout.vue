@@ -173,8 +173,8 @@ export default {
                         },
                         {
                             icon: "mdi-cogs",
-                            title: "カメラ設定",
-                            to: "/" + String(spotsData[i].id) + "/spotSettings",
+                            title: "カメラ登録",
+                            to: "/" + String(spotsData[i].id) + "/CameraRegister",
                             exact: true
                         }
                     ]
