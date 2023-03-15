@@ -2,7 +2,7 @@
     <v-card
         class="mx-auto"
         max-height="420"
-        style="background: linear-gradient(#14F3FF, #6E00B2);"
+        style="background: #2c2d3f;"
     > 
         <v-card-item>
             <v-card-title class="headline">駐輪場状況</v-card-title>

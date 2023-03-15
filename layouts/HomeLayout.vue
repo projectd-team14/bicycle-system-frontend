@@ -1,7 +1,7 @@
 <template>
     <v-app 
         id="app"
-        style="background: linear-gradient(to right, #fc00ff, #00dbde);"
+        style="background: #191919;"
         >
         <v-navigation-drawer
             v-model="drawer"
@@ -210,7 +210,7 @@ export default {
 
 <style scoped>
 .navigation {
-    background: linear-gradient(#00d8db, #8200ce);
+    background: linear-gradient(#00e0bb, #007dd1);
 }
 
 .item-list {

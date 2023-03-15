@@ -2,7 +2,7 @@
     <v-card
         class="mx-auto box"
         max-height="420"
-        style="background: linear-gradient(#14F3FF, #6E00B2);"
+        style="background: #2c2d3f;"
     > 
         <v-card-item>
             <v-card-title class="headline">混雑度</v-card-title>

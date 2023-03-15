@@ -1,6 +1,6 @@
 <template>
     <v-container>
-        <v-card style="background: linear-gradient(#14F3FF, #6E00B2);">
+        <v-card style="background: #2c2d3f;">
             <v-col cols="12">
                 <h2>Login</h2>
                 <v-form @submit.prevent="loginUser">
@@ -18,7 +18,7 @@
                     <v-col cols="10">
                         <v-btn
                             block
-                            color="#00E5FF"
+                            style="background: linear-gradient(#00e0bb, #007dd1);"
                             @click="onClickLoginButton()"
                         >
                             Login

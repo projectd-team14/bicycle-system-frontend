@@ -2,7 +2,7 @@
     <v-card
         class="mx-auto"
         max-height="600"
-        style="background: linear-gradient(#14F3FF, #6E00B2);"
+        style="background: #2c2d3f;"
     > 
         <v-card-item>
             <v-card-title class="headline">カメラ登録</v-card-title>
@@ -21,7 +21,7 @@
                     <v-col cols="4">
                         <v-btn
                             block
-                            color="#00E5FF"
+                            style="background: linear-gradient(#00e0bb, #007dd1);"
                             @click="onClickRegisterButton()"
                         >
                             Register
