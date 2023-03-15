@@ -166,7 +166,7 @@ export default {
                     title: spotsData[i].name,
                     items: [
                         {
-                            icon: "mdi-car-multiple",
+                            icon: "mdi-bicycle",
                             title: "詳細",
                             to: "/" + String(spotsData[i].id) + "/detail",
                             exact: true
