@@ -90,7 +90,7 @@
                     </template>
                     <v-list-item @click="onClickSpotRegisterButton()">
                         <v-list-item-icon>
-                            <v-icon>mdi-cctv</v-icon>
+                            <v-icon>mdi-bicycle</v-icon>
                         </v-list-item-icon>
                         <v-list-item-content>
                             <v-list-item-title
@@ -172,7 +172,7 @@ export default {
                             exact: true
                         },
                         {
-                            icon: "mdi-cogs",
+                            icon: "mdi-cctv",
                             title: "カメラ登録",
                             to: "/" + String(spotsData[i].id) + "/CameraRegister",
                             exact: true
