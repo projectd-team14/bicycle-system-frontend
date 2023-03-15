@@ -154,8 +154,7 @@ export default {
     computed: {
         sideNavigationList() {
             var navigationList = [];
-            var spots = this.$store.state.homeData;
-            var spotsData = spots.homeData.spots_data;
+            var spotsData = this.$store.state.homeData.homeData;
             
             if (typeof spotsData == 'undefined') {
                 spotsData = [];
@@ -164,7 +163,7 @@ export default {
             for (let i = 0; i < spotsData.length; i++) {
                 var data = {
                     icon: "mdi-pin-outline",
-                    title: spotsData[i].spots_name,
+                    title: spotsData[i].name,
                     items: [
                         {
                             icon: "mdi-car-multiple",
@@ -174,7 +173,7 @@ export default {
                         },
                         {
                             icon: "mdi-cogs",
-                            title: "設定",
+                            title: "カメラ設定",
                             to: "/" + String(spotsData[i].id) + "/spotSettings",
                             exact: true
                         }

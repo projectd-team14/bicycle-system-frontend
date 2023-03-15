@@ -13,17 +13,17 @@
                 <v-col
                     cols="12"
                     class="d-flex justify-center"
-                    v-for="(spots, i) in $store.state.homeData.homeData.spots_data"
+                    v-for="(spots, i) in $store.state.homeData.homeData"
                     :key="i"
                 >
                     <v-progress-circular
                         :size="180"
                         :width="10"
-                        :value="100 * spots.spots_count / spots.spots_max"
+                        :value="100 * spots.count / spots.max"
                         :color="spots.border_color"
                         :styles="chartStyles"
                     >
-                        <h2>{{ 100 * spots.spots_count / spots.spots_max }}%</h2>
+                        <h2>{{ 100 * spots.count / spots.max }}%</h2>
                     </v-progress-circular>
                 </v-col>
             </div>

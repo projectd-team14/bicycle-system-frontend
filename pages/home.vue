@@ -20,7 +20,7 @@
 </template>
 
 <script>
-import MonthChart from "~/components/Dashboard/MonthChart.vue";
+import MonthChart from "~/components/Dashboard/ViolationChart.vue";
 import CongestionChart from "~/components/Dashboard/CongestionChart.vue";
 import DayChart from "~/components/Dashboard/DayChart.vue";
 import SpotsMap from "~/components/Dashboard/SpotsMap.vue";

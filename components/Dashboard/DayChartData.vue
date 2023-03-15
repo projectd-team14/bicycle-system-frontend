@@ -43,14 +43,13 @@ export default {
     },
     watch: {
         getHomeData(values) {
-            this.chartdata.labels = values.day_labels_data;
-            var spots = values.spots_data;
+            this.chartdata.labels = [...Array(24)].map((_, i) => i);
 
-            for (var i = 0; i < spots.length; i++) {
+            for (let i = 0; i < values.length; i++) {
                 const dataset = {
-                    label: spots[i].spots_name,
-                    data: spots[i].spots_day_count,
-                    borderColor: spots[i].border_color,
+                    label: values[i].name,
+                    data: values[i].count_day1,
+                    borderColor: values[i].border_color,
                     lineTension: 0,
                     borderWidth: 3,
                     fill: false
