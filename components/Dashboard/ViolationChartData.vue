@@ -43,7 +43,7 @@ export default {
     },
     watch: {
         getHomeData(values) {
-            this.chartdata.labels = [...Array(30)].map((_, i) => i);
+            this.chartdata.labels = values[0].month_labels;
 
             for (let i = 0; i < values.length; i++) {
                 const dataset = {
