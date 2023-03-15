@@ -68,7 +68,6 @@ export default {
     },
     methods: {
         onClickRegisterButton() {
-            console.log(this.spot);
             this.$axios.post("/api/store_spot/" + this.$auth.user.id, this.spot)
             .then((response) => {
                 this.onLoadhomeData();
