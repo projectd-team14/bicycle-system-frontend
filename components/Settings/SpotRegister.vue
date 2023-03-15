@@ -5,7 +5,7 @@
         style="background: linear-gradient(#14F3FF, #6E00B2);"
     > 
         <v-card-item>
-            <v-card-title class="headline">Spot registration</v-card-title>
+            <v-card-title class="headline">駐輪場登録</v-card-title>
             <v-col cols="12">
                 <v-form>
                     <v-text-field

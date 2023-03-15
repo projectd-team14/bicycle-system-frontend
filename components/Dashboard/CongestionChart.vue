@@ -5,7 +5,7 @@
         style="background: linear-gradient(#14F3FF, #6E00B2);"
     > 
         <v-card-item>
-            <v-card-title class="headline">Congestion</v-card-title>
+            <v-card-title class="headline">混雑度</v-card-title>
             <div
                 class="justify-center"
                 style="height: 350px;"

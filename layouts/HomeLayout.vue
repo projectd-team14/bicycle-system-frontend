@@ -84,7 +84,7 @@
                         <v-list-item-content>
                             <v-list-item-title
                                 class="text-subtitle-1"
-                                v-text="'Settings'"
+                                v-text="'設定'"
                             />
                         </v-list-item-content>
                     </template>
@@ -94,7 +94,7 @@
                         </v-list-item-icon>
                         <v-list-item-content>
                             <v-list-item-title
-                                v-text="'Register'"
+                                v-text="'駐輪場登録'"
                             />
                         </v-list-item-content>
                     </v-list-item>
@@ -104,7 +104,7 @@
                         </v-list-item-icon>
                         <v-list-item-content>
                             <v-list-item-title
-                                v-text="'Logout'"
+                                v-text="'ログアウト'"
                             />
                         </v-list-item-content>
                     </v-list-item>

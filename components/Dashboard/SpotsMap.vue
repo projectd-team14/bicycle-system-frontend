@@ -5,7 +5,7 @@
         style="background: linear-gradient(#14F3FF, #6E00B2);"
     > 
         <v-card-item>
-            <v-card-title class="headline">Map</v-card-title>
+            <v-card-title class="headline">駐輪場マップ</v-card-title>
             <div style="height: 350px;">
                 <GmapMap
                     map-type-id="roadmap"
