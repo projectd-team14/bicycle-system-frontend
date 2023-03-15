@@ -1,7 +1,7 @@
 <template>
     <v-card
         class="mx-auto"
-        max-height="500"
+        max-height="600"
         style="background: linear-gradient(#14F3FF, #6E00B2);"
     > 
         <v-card-item>
@@ -24,6 +24,16 @@
                         v-model="spot.spots_max"
                         label="max"
                     ></v-text-field>
+                    <v-text-field
+                        v-model="spot.spots_over_time"
+                        label="over time"
+                    ></v-text-field>
+                    <v-select 
+                        v-model="spot.spots_status"
+                        label="status"
+                        :items="items"
+                    >
+                    </v-select>
                 </v-form>
                 <v-row>
                     <v-col cols="4">
@@ -49,13 +59,17 @@ export default {
                 spots_name: "",
                 spots_address: "",
                 spots_url: "",
-                spots_max: 0
-            }
+                spots_max: 0,
+                spots_over_time: 0,
+                spots_status: "自転車"
+            },
+            items: ["自転車", "バイク", "全てを管理"]
         }
     },
     methods: {
         onClickRegisterButton() {
-            this.$axios.post("/api/spots_register/" + this.$auth.user.id, this.spot)
+            console.log(this.spot);
+            this.$axios.post("/api/store_spot/" + this.$auth.user.id, this.spot)
             .then((response) => {
                 this.onLoadhomeData();
                 this.$router.push("/home");
