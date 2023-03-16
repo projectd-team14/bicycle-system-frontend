@@ -23,7 +23,7 @@
 <script>
 export default {
     data() {
-        return{
+        return {
             height: 100,
             maplocation: {
                 lat: 35.6581,

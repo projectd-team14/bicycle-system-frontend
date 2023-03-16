@@ -38,7 +38,7 @@ export default {
             height: 100
         }
     },
-    computed:{
+    computed: {
         chartStyles() {
             return{
                 height: `${this.height}%`,

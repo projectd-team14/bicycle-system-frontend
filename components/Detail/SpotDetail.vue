@@ -75,9 +75,9 @@ export default {
             height: 100
         }
     },
-    computed:{
+    computed: {
         chartStyles() {
-            return{
+            return {
                 height: `${this.height}%`,
                 position:'relative'
             }
@@ -93,7 +93,6 @@ export default {
             }
 
             this.camerasData = this.$store.state.cameraData.cameraData;
-            console.log(this.camerasData);
             
             for (let i = 0; i < this.camerasData.length; i++) {
                 var data = {
