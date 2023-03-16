@@ -168,7 +168,7 @@ export default {
                         {
                             icon: "mdi-bicycle",
                             title: "詳細",
-                            to: "/" + String(spotsData[i].id) + "/detail",
+                            to: "/" + String(spotsData[i].id) + "/spotDetail",
                             exact: true
                         },
                         {
@@ -210,7 +210,7 @@ export default {
 
 <style scoped>
 .navigation {
-    background: linear-gradient(#00e0bb, #007dd1);
+    background: linear-gradient(#e00083, #33005e);
 }
 
 .item-list {
