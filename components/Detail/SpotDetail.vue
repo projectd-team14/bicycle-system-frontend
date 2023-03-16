@@ -10,56 +10,62 @@
                 class="justify-center"
                 style="height: 790px;"
             >
-            <template
-                    v-for="(navigation, i) in this.navigationList"
+                <v-list
+                    class="item-list box"
+                    dense
+                    nav
+                    style="background: #2c2d3f;"
                 >
-                    <v-list-group
-                        v-if="typeof navigation == 'object'"
-                        :key="i"
-                        :prepend-icon="navigation.icon"
-                    >
-                        <template v-slot:activator>
-                            <v-list-item-content>
-                            <v-list-item-title
-                                class="text-subtitle-1"
-                                v-text="navigation.title"
-                            />
-                            </v-list-item-content>
-                        </template>
-                        <v-list-item
-                            v-for="(subNavigation, j) in navigation.items"
-                            :key="j"
-                            :to="subNavigation.to"
-                            :exact="subNavigation.exact"
-                            @click="onLoadSettingData(navigation.title)"
+                    <template v-for="(navigation, i) in this.navigationList">
+                        <v-list-group
+                            v-if="typeof navigation == 'object'"
+                            :key="i"
+                            :prepend-icon="navigation.icon"
                         >
-                            <v-list-item-icon>
-                                <v-icon>{{ subNavigation.icon }}</v-icon>
-                            </v-list-item-icon>
+                            <template v-slot:activator>
+                                <v-list-item-content>
+                                <v-list-item-title
+                                    class="text-subtitle-1"
+                                    v-text="navigation.title"
+                                />
+                                </v-list-item-content>
+                            </template>
+                            <v-list-item
+                                v-for="(subNavigation, j) in navigation.items"
+                                :key="j"
+                                :to="subNavigation.to"
+                                :exact="subNavigation.exact"
+                                @click="onLoadSettingData(navigation.title)"
+                            >
+                                <v-list-item-icon>
+                                    <v-icon>{{ subNavigation.icon }}</v-icon>
+                                </v-list-item-icon>
+                                <v-list-item-content>
+                                    <v-list-item-title
+                                        v-text="subNavigation.title"
+                                    />
+                                </v-list-item-content>
+                            </v-list-item>
+                        </v-list-group>
+                        <v-list-item
+                            v-else
+                            :key="i"
+                            :to="navigation.to"
+                            :exact="navigation.exact"
+                        >
+                            <v-list-item-action>
+                                <v-icon>{{ navigation.icon }}</v-icon>
+                            </v-list-item-action>
                             <v-list-item-content>
                                 <v-list-item-title
-                                    v-text="subNavigation.title"
+                                    class="text-subtitle-1"
+                                    v-text="navigation.title"
                                 />
                             </v-list-item-content>
                         </v-list-item>
-                    </v-list-group>
-                    <v-list-item
-                        v-else
-                        :key="i"
-                        :to="navigation.to"
-                        :exact="navigation.exact"
-                    >
-                        <v-list-item-action>
-                            <v-icon>{{ navigation.icon }}</v-icon>
-                        </v-list-item-action>
-                        <v-list-item-content>
-                            <v-list-item-title
-                                class="text-subtitle-1"
-                                v-text="navigation.title"
-                            />
-                        </v-list-item-content>
-                    </v-list-item>
-                </template>
+                    </template>            
+                </v-list>
+
             </div>
         </v-card-item>
     </v-card>            

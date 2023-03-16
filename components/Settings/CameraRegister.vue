@@ -21,7 +21,7 @@
                     <v-col cols="4">
                         <v-btn
                             block
-                            style="background: linear-gradient(#00e0bb, #007dd1);"
+                            style="background: linear-gradient(#e00083, #33005e);"
                             @click="onClickRegisterButton()"
                         >
                             Register

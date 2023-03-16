@@ -18,7 +18,7 @@
                     <v-col cols="10">
                         <v-btn
                             block
-                            style="background: linear-gradient(#00e0bb, #007dd1);"
+                            style="background: linear-gradient(#e00083, #33005e);"
                             @click="onClickLoginButton()"
                         >
                             Login
@@ -28,7 +28,7 @@
                         <v-btn
                             block
                             outlined
-                            color="#00E5FF" 
+                            color="#e00083" 
                             @click="onClickTransitionRegisterButton()"
                         >
                             Sign up
