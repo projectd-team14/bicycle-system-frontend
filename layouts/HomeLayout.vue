@@ -45,7 +45,7 @@
                             :key="j"
                             :to="subNavigation.to"
                             :exact="subNavigation.exact"
-                            @click="onLoadSettingData(navigation.title)"
+                            @click="onLoadSettingData(navigation.title, navigation.id, j)"
                         >
                             <v-list-item-icon>
                                 <v-icon>{{ subNavigation.icon }}</v-icon>
@@ -162,6 +162,7 @@ export default {
 
             for (let i = 0; i < spotsData.length; i++) {
                 var data = {
+                    id: spotsData[i].id,
                     icon: "mdi-pin-outline",
                     title: spotsData[i].name,
                     items: [
@@ -194,14 +195,25 @@ export default {
             this.onLoadhomeData();
             this.$router.push("/home");
         },
-        onLoadSettingData(spotsName) {
-            this.$store.dispatch("settingData/onLoadSettingData", {
-                spotsName: spotsName
-            });
+        onLoadSettingData(spotsName, spotsId, j) {
+            if (j === 0) {
+                this.$store.dispatch("cameraData/onLoadCameraData", {
+                    spotsId: spotsId
+                });
+            } else {
+                this.$store.dispatch("settingData/onLoadSettingData", {
+                    spotsName: spotsName
+                });                
+            }
         },
         async onLoadhomeData() {
             this.$store.dispatch("homeData/onLoadhomeData", {
                 usersId: this.$auth.user.id
+            });
+        },
+        async onLoadCameraData(spotsId) {
+            this.$store.dispatch("homeData/onLoadCameraData", {
+                spotsId: spotsId
             });
         }
     }
