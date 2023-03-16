@@ -76,39 +76,26 @@
                 </template>                    
             </v-list>
             <v-list>
-                <v-list-group>
-                    <template v-slot:activator>
-                        <v-list-item-action>
-                            <v-icon x-large>mdi-account-cog-outline</v-icon> 
-                        </v-list-item-action>
-                        <v-list-item-content>
-                            <v-list-item-title
-                                class="text-subtitle-1"
-                                v-text="'設定'"
-                            />
-                        </v-list-item-content>
-                    </template>
-                    <v-list-item @click="onClickSpotRegisterButton()">
-                        <v-list-item-icon>
-                            <v-icon>mdi-bicycle</v-icon>
-                        </v-list-item-icon>
-                        <v-list-item-content>
-                            <v-list-item-title
-                                v-text="'駐輪場登録'"
-                            />
-                        </v-list-item-content>
-                    </v-list-item>
-                    <v-list-item @click="$auth.logout()">
-                        <v-list-item-icon>
-                            <v-icon>mdi-logout</v-icon>
-                        </v-list-item-icon>
-                        <v-list-item-content>
-                            <v-list-item-title
-                                v-text="'ログアウト'"
-                            />
-                        </v-list-item-content>
-                    </v-list-item>
-                </v-list-group>
+                <v-list-item @click="onClickSpotRegisterButton()">
+                    <v-list-item-action>
+                        <v-icon x-larg>mdi-bicycle</v-icon>
+                    </v-list-item-action>
+                    <v-list-item-content>
+                        <v-list-item-title
+                            v-text="'駐輪場登録'"
+                        />
+                    </v-list-item-content>
+                </v-list-item>
+                <v-list-item @click="$auth.logout()">
+                    <v-list-item-action>
+                        <v-icon x-larg>mdi-logout</v-icon>
+                    </v-list-item-action>
+                    <v-list-item-content>
+                        <v-list-item-title
+                            v-text="'ログアウト'"
+                        />
+                    </v-list-item-content>
+                </v-list-item>
             </v-list>
         </v-navigation-drawer>
         <v-app-bar :clipped-left="clipped" fixed app>
@@ -226,7 +213,7 @@ export default {
 }
 
 .item-list {
-    height: 80%;
+    height: 85%;
     overflow-y: auto;
 }
 
