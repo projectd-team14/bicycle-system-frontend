@@ -1,7 +1,7 @@
 <template>
     <v-card
         class="mx-auto"
-        max-height="690"
+        max-height="705"
         style="background: #2c2d3f;"
     > 
         <v-card-item>
@@ -9,7 +9,7 @@
             <v-col cols="12">
                 <iframe
                     width="100%"
-                    height="600"
+                    height="620"
                     :src="this.cameraUrl"
                     title="YouTube video player"
                     frameborder="0"

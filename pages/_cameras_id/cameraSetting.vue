@@ -13,8 +13,11 @@
                     <v-col :cols="12">
                         <CameraView class="mx-auto" />
                     </v-col>
-                    <v-col :cols="12">
-                        <CameraSetting class="mx-auto" />
+                    <v-col :cols="8">
+                        <CameraSwitch class="mx-auto" />
+                    </v-col> 
+                    <v-col :cols="4">
+                        <CameraDelete class="mx-auto" />
                     </v-col> 
                 </v-row>            
             </v-col>
@@ -25,7 +28,8 @@
 <script>
 import CameraList from "~/components/List/CameraList.vue";
 import CameraView from "~/components/Setting/CameraView.vue";
-import CameraSetting from "~/components/Setting/CameraSetting.vue";
+import CameraSwitch from "~/components/Setting/CameraSwitch.vue";
+import CameraDelete from "~/components/Setting/CameraDelete.vue";
 
 export default {
     layout: "HomeLayout",
@@ -33,7 +37,8 @@ export default {
     components: {
         CameraList,
         CameraView,
-        CameraSetting
+        CameraSwitch,
+        CameraDelete
     }
 }
 </script>
