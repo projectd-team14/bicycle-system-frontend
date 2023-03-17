@@ -45,7 +45,7 @@ export default {
     },
     methods: {
         onClickRegisterButton() {
-            this.$axios.post("/api/store_camera/" + this.$route.params.id, this.camera)
+            this.$axios.post("/api/store_camera/" + this.$route.params.spots_id, this.camera)
             .then((response) => {
                 this.onLoadhomeData();
                 this.$router.push("/home");
