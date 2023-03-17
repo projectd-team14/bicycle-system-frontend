@@ -135,7 +135,7 @@ export default {
             miniVariant: false,
             right: true,
             rightDrawer: false,
-            title: 'Admin system',
+            title: 'Bicycle system',
         }
     },
     computed: {
