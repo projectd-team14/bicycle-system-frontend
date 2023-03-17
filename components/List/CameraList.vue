@@ -81,6 +81,10 @@ export default {
             height: 100
         }
     },
+    mounted() {
+        this.navigationList = [];
+        this.createCamerasList();
+    },
     computed: {
         chartStyles() {
             return {
@@ -98,6 +102,12 @@ export default {
                 return this.navigationList;
             }
 
+            this.navigationList = [];
+            this.createCamerasList();
+        }
+    },
+    methods: {
+        createCamerasList() {
             this.camerasData = this.$store.state.cameraData.cameraData;
             
             for (let i = 0; i < this.camerasData.length; i++) {
@@ -126,6 +136,7 @@ export default {
             return this.navigationList;
         }
     }
+    
 }
 </script>
 
