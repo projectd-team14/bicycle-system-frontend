@@ -187,12 +187,12 @@ export default {
                 this.$store.dispatch("cameraData/onLoadCameraData", {
                     spotsId: spotsId
                 });
+                this.$store.dispatch("spotData/onLoadSpotData", {
+                    spotsId: spotsId
+                });
             } else {
                 this.$store.dispatch("cameraData/onLoadCameraData", {
                     spotsId: spotsId
-                });
-                this.$store.dispatch("settingData/onLoadSettingData", {
-                    spotsName: spotsName
                 });                
             }
         },
