@@ -194,13 +194,8 @@ export default {
             }
         },
         async onLoadhomeData() {
-            this.$store.dispatch("homeData/onLoadhomeData", {
+            this.$store.dispatch("homeData/onLoadHomeData", {
                 usersId: this.$auth.user.id
-            });
-        },
-        async onLoadCameraData(spotsId) {
-            this.$store.dispatch("homeData/onLoadCameraData", {
-                spotsId: spotsId
             });
         }
     }

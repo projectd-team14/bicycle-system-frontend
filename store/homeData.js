@@ -15,7 +15,7 @@ export const mutations = {
 }
 
 export const actions = {
-    async onLoadhomeData({ commit, state }, { usersId }) {
+    async onLoadHomeData({ commit, state }, { usersId }) {
         this.$axios.get("/api/home_data/" + usersId)
         .then((response) => {
             commit('setHomeData', response.data);

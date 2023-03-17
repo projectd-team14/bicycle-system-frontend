@@ -64,7 +64,7 @@ export default {
             this.$router.push("/auth/register");
         },
         async onLoadhomeData() {
-            this.$store.dispatch("homeData/onLoadhomeData", {
+            this.$store.dispatch("homeData/onLoadHomeData", {
                 usersId: this.$auth.user.id
             });
         }
