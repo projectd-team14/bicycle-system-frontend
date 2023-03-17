@@ -13,7 +13,7 @@
 
 <script>
 import CameraList from "~/components/List/CameraList.vue";
-import CameraSetting from "~/components/Settings/CameraSetting.vue";
+import CameraSetting from "~/components/Setting/CameraSetting.vue";
 
 export default {
     layout: "HomeLayout",

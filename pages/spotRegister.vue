@@ -9,7 +9,7 @@
 </template>
 
 <script>
-import SpotRegister from "~/components/Settings/SpotRegister.vue";
+import SpotRegister from "~/components/Setting/SpotRegister.vue";
 
 export default {
     layout: "HomeLayout",

@@ -9,7 +9,7 @@
 </template>
 
 <script>
-import CameraRegister from "~/components/Settings/CameraRegister.vue";
+import CameraRegister from "~/components/Setting/CameraRegister.vue";
 
 export default {
     layout: "HomeLayout",
