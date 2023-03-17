@@ -6,6 +6,7 @@ export default {
     data(){
         return {
             chartdata: {
+                chart: [],
                 labels: [],
                 datasets: []
             },
@@ -36,6 +37,10 @@ export default {
             }
         }
     },
+    mounted() {
+        const values =this.$store.getters["spotData/getSpotData"];
+        this.createChart(values);
+    },
     computed: {
         getHomeData: function() {
             return this.$store.getters["spotData/getSpotData"];
@@ -43,6 +48,11 @@ export default {
     },
     watch: {
         getHomeData(values) {
+            this.createChart(values);
+        }
+    },
+    methods: {
+        createChart(values) {
             var borderColor = "";
             var spots = this.$store.state.homeData.homeData;
 
@@ -53,19 +63,22 @@ export default {
                     break;
                 }
             }
-            
-            const spotData = values.situationChartData
-            const dataset = {
-                    label: spotData[0].label,
-                    data: spotData[0].data,
-                    borderColor: borderColor,
-                    lineTension: 0,
-                    borderWidth: 3,
-                    fill: false
-                }
-            this.chartdata.labels = spotData[0].labels;
-            this.chartdata.datasets.push(dataset);
-            this.renderChart(this.chartdata, this.options);
+
+            if (typeof values.situationChartData !== 'undefined') {
+                const spotData = values.situationChartData
+                const dataset = {
+                        label: spotData[0].label,
+                        data: spotData[0].data,
+                        borderColor: borderColor,
+                        lineTension: 0,
+                        borderWidth: 3,
+                        fill: false
+                    }
+                this.chartdata.labels = spotData[0].labels;
+                this.chartdata.datasets = [];
+                this.chartdata.datasets.push(dataset);
+                this.renderChart(this.chartdata, this.options);
+            }
         }
     }
 }

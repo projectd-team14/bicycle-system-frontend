@@ -11,22 +11,7 @@
             <v-col :cols="10">
                 <v-row>
                     <v-col :cols="12">
-                        <DetailDayChart class="mx-auto" />
-                    </v-col>
-                </v-row> 
-                <v-row>
-                    <v-col :cols="12">
-                        <DetailWeekChart class="mx-auto" />
-                    </v-col>
-                </v-row>  
-                <v-row>
-                    <v-col :cols="12">
-                        <DetailOneMonthChart class="mx-auto" />
-                    </v-col>
-                </v-row>   
-                <v-row>
-                    <v-col :cols="12">
-                        <DetailThreeMonthChart class="mx-auto" />
+                        <DetailChart class="mx-auto" />
                     </v-col>
                 </v-row>            
             </v-col>
@@ -36,20 +21,14 @@
 
 <script>
 import CameraList from "~/components/List/CameraList.vue";
-import DetailDayChart from "~/components/Detail/DetailDayChart.vue";
-import DetailWeekChart from "~/components/Detail/DetailWeekChart.vue";
-import DetailOneMonthChart from "~/components/Detail/DetailOneMonthChart.vue";
-import DetailThreeMonthChart from "~/components/Detail/DetailThreeMonthChart.vue";
+import DetailChart from "~/components/Detail/DetailChart.vue";
 
 export default {
     layout: "HomeLayout",
     middleware: "auth",
     components: {
         CameraList,
-        DetailDayChart,
-        DetailWeekChart,
-        DetailOneMonthChart,
-        DetailThreeMonthChart
+        DetailChart
     }
 }
 </script>
