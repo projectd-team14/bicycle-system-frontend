@@ -108,13 +108,13 @@ export default {
                         {
                             icon: "mdi-dip-switch",
                             title: "動作設定",
-                            to: "/" + String(this.camerasData[i].cameras_id) + "/spotDetail",
+                            to: "/" + String(this.camerasData[i].cameras_id) + "/cameraSetting",
                             exact: true
                         },
                         {
                             icon: "mdi-image-size-select-large",
                             title: "範囲設定",
-                            to: "/" + String(this.camerasData[i].cameras_id) + "/CameraRegister",
+                            to: "/" + String(this.camerasData[i].cameras_id) + "/labelSetting",
                             exact: true
                         }
                     ]
