@@ -117,6 +117,12 @@ export default {
                     items: [
                         {
                             icon: "mdi-dip-switch",
+                            title: "自転車設定",
+                            to: "/" + String(this.camerasData[i].cameras_id) + "/bicycleSetting",
+                            exact: true
+                        },
+                        {
+                            icon: "mdi-dip-switch",
                             title: "動作設定",
                             to: "/" + String(this.camerasData[i].cameras_id) + "/cameraSetting",
                             exact: true
