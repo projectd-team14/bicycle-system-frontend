@@ -148,7 +148,7 @@ export default {
                     s = [p[0], p[1], p[3] , p[2]];
                 }
                 
-                for (let i = 0,j = s.length; i < j; i++){
+                for (let i = 0; i < s.length; i++){
                     this.ctx.beginPath();
                     this.ctx.moveTo(s[i][0], s[i][1]);
                     let k = (i === s.length - 1 ? 0 : i + 1);
