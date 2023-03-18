@@ -1,25 +1,29 @@
 <template>
-    <v-card
-        class="mx-auto"
-        max-height="770"
-        style="background: #2c2d3f;"
-    > 
-        <v-card-item>
-            <v-card-title class="headline">動作設定<v-icon>mdi-minus</v-icon>{{ this.cameraName }}</v-card-title>
-            <v-col cols="12">
-                <iframe
-                    width="100%"
-                    height="680"
-                    :src="this.cameraUrl"
-                    title="YouTube video player"
-                    frameborder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    allowfullscreen
-                >
-                </iframe>                       
-            </v-col>
-        </v-card-item>
-    </v-card>
+    <v-row>
+        <v-col cols="12">
+            <v-card
+                class="mx-auto"
+                max-height="770"
+                style="background: #2c2d3f;"
+            > 
+                <v-card-item>
+                    <v-card-title class="headline">動作設定<v-icon>mdi-minus</v-icon>{{ this.cameraName }}</v-card-title>
+                    <v-col cols="12">
+                        <iframe
+                            width="100%"
+                            height="680"
+                            :src="this.cameraUrl"
+                            title="YouTube video player"
+                            frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            allowfullscreen
+                        >
+                        </iframe>                       
+                    </v-col>
+                </v-card-item>
+            </v-card>
+        </v-col>            
+    </v-row>
 </template>
   
 <script>
