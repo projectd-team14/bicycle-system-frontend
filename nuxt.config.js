@@ -46,7 +46,8 @@ export default {
   ],
 
   publicRuntimeConfig: {
-    googleMapsKEY: process.env.GOOGLE_MAPS_KEY
+    googleMapsKEY: process.env.GOOGLE_MAPS_KEY,
+    fastURL: process.env.FAST_URL
   },
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
