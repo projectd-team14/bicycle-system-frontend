@@ -13,6 +13,9 @@
                     <v-col :cols="12">
                         <DetailChart class="mx-auto" />
                     </v-col>
+                    <v-col :cols="12">
+                        <DetailBarChart class="mx-auto" />
+                    </v-col>
                 </v-row>            
             </v-col>
         </v-row>
@@ -22,13 +25,15 @@
 <script>
 import CameraList from "~/components/List/CameraList.vue";
 import DetailChart from "~/components/Detail/DetailChart.vue";
+import DetailBarChart from "~/components/Detail/DetailBarChart.vue";
 
 export default {
     layout: "HomeLayout",
     middleware: "auth",
     components: {
         CameraList,
-        DetailChart
+        DetailChart,
+        DetailBarChart
     }
 }
 </script>
