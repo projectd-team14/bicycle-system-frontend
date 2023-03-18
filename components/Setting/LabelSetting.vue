@@ -125,23 +125,22 @@ export default {
             if (this.points.length === 4) {
                 let p = this.points.slice(0, this.points.length);
                 let s = [];
-                let is_cross = function(line1, line2) {
+                let isCross = function(line1, line2) {
                     var l1From = line1[0];
                     var l1To = line1[1];
                     var l2From = line2[0];
                     var l2To = line2[1];
-                    var line_formula = function(l){
+                    var lineFormula = function(l){
                         return l[1] - l1From[1] - (l[0]-l1From[0]) * (l1To[1] - l1From[1]) / (l1To[0] - l1From[0]);
-                        
                     }
 
-                    return line_formula(l2From)*line_formula(l2To)<0;
+                    return lineFormula(l2From)*lineFormula(l2To)<0;
                 }
 
-                if (is_cross([p[0], p[1]] , [p[2], p[3]])){
+                if (isCross([p[0], p[1]] , [p[2], p[3]])){
                     s = [p[0], p[2], p[1] , p[3]];
                 }
-                else if (is_cross([p[0], p[2]] , [p[1], p[3]])){
+                else if (isCross([p[0], p[2]] , [p[1], p[3]])){
                     s = [p[0], p[1], p[2] , p[3]];
                 }
                 else {
