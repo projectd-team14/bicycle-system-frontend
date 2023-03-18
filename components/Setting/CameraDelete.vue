@@ -6,7 +6,6 @@
             style="background: #2c2d3f;"
         > 
             <v-card-item>
-                <v-card-title class="headline">削除</v-card-title>
                     <v-col cols="12">
                         <v-btn
                             block

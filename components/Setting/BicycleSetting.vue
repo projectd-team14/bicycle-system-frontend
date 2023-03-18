@@ -20,6 +20,15 @@ export default {
         }
     },
     mounted() {
+        var camerasData = this.$store.state.cameraData.cameraData;
+
+        for (let i = 0; i < camerasData.length; i++) {
+            if (camerasData[i].cameras_id == this.$route.params.cameras_id) {
+                this.cameraName = camerasData[i].cameras_name;
+
+                break;
+            }
+        }
     },
     methods: {
     }
