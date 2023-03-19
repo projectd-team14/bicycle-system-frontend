@@ -3,8 +3,7 @@
         <v-col cols="12">
             <v-card
                 class="mx-auto box"
-                max-height="705"
-                style="background: #2c2d3f;"
+                style="background: #2c2d3f; height: 855px;"
             > 
                 <v-card-item>
                     <v-card-title class="headline">自転車設定<v-icon>mdi-minus</v-icon>{{ this.cameraName }}</v-card-title>
@@ -14,11 +13,25 @@
                                 <v-row>
                                     <v-col cols="12">
                                         <div class="mx-5">
-                                            <img 
-                                                id="img_source" 
-                                                :src="bicycle.bicycles_url"
-                                                style="width: 100%; height: 100%;"
-                                            >  
+                                            <figure class="container_image">
+                                                <img 
+                                                    id="img_source" 
+                                                    class="item_image"
+                                                    :src="bicycle.bicycles_url"
+                                                > 
+                                            </figure>
+                                            <template v-if="bicycle.bicycles_status == false">
+                                                <div class="container_description_false">
+                                                    <div>エリア：{{ bicycle.labels_name }}</div>
+                                                    <div>利用時間：{{ bicycle.bicycles_time }}時間</div>
+                                                </div>
+                                            </template>
+                                            <template v-if="bicycle.bicycles_status == true">
+                                            <div class="container_description_true">
+                                                <div>エリア：{{ bicycle.labels_name }}</div>
+                                                <div>利用時間：{{ bicycle.bicycles_time }}時間</div>
+                                            </div>
+                                            </template>
                                         </div>
                                     </v-col>
                                 </v-row>
@@ -71,6 +84,7 @@ export default {
                         labels_name: situationData[i].row,
                         bicycles_id: situationData[i].bicycle[j].id,
                         bicycles_status: situationData[i].bicycle[j].violatin_status,
+                        bicycles_time: Math.floor(situationData[i].bicycle[j].time / 3600),
                         bicycles_url: this.$config.fastURL + "/bicycle/?camera_id=" + this.$route.params.cameras_id + "&bicycle_id=" + situationData[i].bicycle[j].id
                     }
 
@@ -78,9 +92,6 @@ export default {
                 }
             }
         }
-        
-        console.log(this.bicycleImagesData);
-        // this.imageSrc = this.$config.fastURL + "/bicycle/?camera_id=" + this.$route.params.cameras_id + "&bicycle_id=1";
     },
     methods: {
     }
@@ -96,5 +107,26 @@ export default {
 
 .box::-webkit-scrollbar {
     display:none;
+}
+
+.container_image {
+  height: 180px;
+  width: 100%;
+}
+.item_image {
+  display: block;
+  height: 180px;
+  object-fit: cover;
+  width: 100%;
+}
+
+.container_description_false {
+  background: #00d3b7;
+  padding: 1rem;
+}
+
+.container_description_true {
+  background: #cc004e;
+  padding: 1rem;
 }
 </style>
