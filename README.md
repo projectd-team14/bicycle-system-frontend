@@ -1,7 +1,9 @@
 # YOLOv5を用いた駐輪場管理業務支援システム
 Bicycle parking lot management system using YOLOv5  
 ## URL
-フロントエンド：[http://localhost:3000](http://localhost:3000/login)  
+ローカル：[http://localhost:3000](http://localhost:3000/login)  
+ステージング：ドキュメントに記載  
+本番環境：ドキュメントに記載  
 ## 環境構築  
 ※本プロジェクトは[バックエンド](https://github.com/projectd-team14/bicycle-system-backend)と[YOLOv5用サーバー](https://github.com/projectd-team14/yolov5-server)の環境構築が必要です。  
 〇主要フレームワーク、ライブラリ、言語等  
