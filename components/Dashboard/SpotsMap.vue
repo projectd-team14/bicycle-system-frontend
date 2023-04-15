@@ -8,12 +8,32 @@
             <v-card-title class="headline">駐輪場マップ</v-card-title>
             <div style="height: 350px;">
                 <GmapMap
+                    ref="gmp"
                     map-type-id="roadmap"
                     :center="maplocation"
                     :zoom="zoom"
                     :style="styleMap"
                     :options="mapOptions"
                 >
+                <GmapMarker
+                    v-for="(m, index) in markers"
+                    :key="index"
+                    :title="m.title"
+                    :position="m.position"
+                    :clickable="true"
+                    :draggable="false"
+                    @click="onClickMarker(index, m)"
+                />
+                <GmapInfoWindow
+                    :options="infoOptions"
+                    :position="infoWindowPos"
+                    :opened="infoWinOpen"
+                    @closeclick="infoWinOpen = false"
+                >
+                    <p style="color: #000">
+                    {{ marker.title }}
+                    </p>
+                </GmapInfoWindow>
                 </GmapMap>
             </div>               
         </v-card-item>
@@ -25,6 +45,7 @@ export default {
     data() {
         return {
             height: 100,
+            zoom: 9,
             maplocation: {
                 lat: 35.6581,
                 lng: 139.7017 
@@ -33,7 +54,6 @@ export default {
                 width: '100%',
                 height: '100%'
             },
-            zoom: 9,
             mapOptions: {
                 zoomControl: false,
                 fullscreenControl: false,
@@ -178,8 +198,37 @@ export default {
                         ]
                     }
                 ]
-            }
+            },
+            infoOptions: {
+                minWidth: 200,
+                pixelOffset: {
+                width: 0,
+                height: -35,
+                },
+            },
+            infoWindowPos: null,
+            infoWinOpen: false,
+            marker: {},
+            markers: [
+                {
+                title: '駐輪場C',
+                position: { lat: 35.689607, lng: 139.700571 },
+                }
+            ]
         }
-    }
+    },
+    methods: {
+    getCurrentPosition() {
+      return new Promise(function (resolve, reject) {
+        navigator.geolocation.getCurrentPosition(resolve, reject)
+      })
+    },
+    onClickMarker(index, marker) {
+      this.$refs.gmp.panTo(marker.position)
+      this.infoWindowPos = marker.position
+      this.marker = marker
+      this.infoWinOpen = true
+    },
+  },
 }
 </script>
