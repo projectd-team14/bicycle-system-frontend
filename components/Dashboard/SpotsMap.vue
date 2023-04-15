@@ -15,25 +15,35 @@
                     :style="styleMap"
                     :options="mapOptions"
                 >
-                <GmapMarker
-                    v-for="(m, index) in markers"
-                    :key="index"
-                    :title="m.title"
-                    :position="m.position"
-                    :clickable="true"
-                    :draggable="false"
-                    @click="onClickMarker(index, m)"
-                />
-                <GmapInfoWindow
-                    :options="infoOptions"
-                    :position="infoWindowPos"
-                    :opened="infoWinOpen"
-                    @closeclick="infoWinOpen = false"
-                >
-                    <p style="color: #000">
-                    {{ marker.title }}
-                    </p>
-                </GmapInfoWindow>
+                    <GmapMarker
+                        v-for="(m, index) in markers"
+                        :key="index"
+                        :title="m.title"
+                        :position="m.position"
+                        :clickable="true"
+                        :draggable="false"
+                        @click="onClickMarker(index, m)"
+                    />
+                    <GmapInfoWindow
+                        :options="infoOptions"
+                        :position="infoWindowPos"
+                        :opened="infoWinOpen"
+                        @closeclick="infoWinOpen = false"
+                    >
+                        <p style="color: #000">
+                        {{ marker.title }}
+                        </p>
+                        <iframe
+                            width="560"
+                            height="315"
+                            :src="marker.url"
+                            title="YouTube video player" 
+                            frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen
+                        >
+                        </iframe>
+                    </GmapInfoWindow>
                 </GmapMap>
             </div>               
         </v-card-item>
@@ -200,21 +210,37 @@ export default {
                 ]
             },
             infoOptions: {
-                minWidth: 200,
+                minWidth: 560,
                 pixelOffset: {
-                width: 0,
-                height: -35,
+                    width: 0,
+                    height: 0,
                 },
             },
             infoWindowPos: null,
             infoWinOpen: false,
             marker: {},
-            markers: [
-                {
-                title: '駐輪場C',
-                position: { lat: 35.689607, lng: 139.700571 },
+            markers: []
+        }
+    },
+    computed: {
+        getHomeData: function() {
+            return this.$store.getters["homeData/getHomeData"];
+        }
+    },
+    watch: {
+        getHomeData(values) {
+            for (let i = 0; i < values.length; i++) {
+                var urlReplace = values[i].url.replace('watch?v=', 'embed/');
+                const dataset = {
+                    title: values[i].name,
+                    url: urlReplace,
+                    position: {
+                        lat: parseFloat(values[i].latitude),
+                        lng: parseFloat(values[i].longitude) 
+                    }
                 }
-            ]
+                this.markers.push(dataset);
+            }
         }
     },
     methods: {
