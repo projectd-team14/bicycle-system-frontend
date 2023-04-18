@@ -1,7 +1,7 @@
 <template>
     <v-card
         class="mx-auto box"
-        max-height="880"
+        max-height="770"
         style="background: #2c2d3f;"
     > 
         <v-card-item>

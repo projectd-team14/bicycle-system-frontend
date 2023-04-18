@@ -5,7 +5,10 @@
                 <v-row>
                     <v-col :cols="12">
                         <CameraList class="mx-auto" />
-                    </v-col>            
+                    </v-col>           
+                    <v-col :cols="12">
+                        <BackButton class="mx-auto" />
+                    </v-col>     
                 </v-row>            
             </v-col>
             <v-col :cols="10">
@@ -22,13 +25,15 @@
 <script>
 import CameraList from "~/components/List/CameraList.vue";
 import LabelSetting from "~/components/Setting/LabelSetting.vue";
+import BackButton from "~/components/Setting/BackButton.vue";
 
 export default {
     layout: "HomeLayout",
     middleware: "auth",
     components: {
         CameraList,
-        LabelSetting
+        LabelSetting,
+        BackButton
     }
 }
 </script>
